@@ -1,0 +1,164 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Whole Doc */
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    height: 100vh;
+}
+
+/* Player */
+.player{
+    background: #fff;
+    width: 450px;
+    height: 630px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2980b9;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container{
+    width: 100%;
+    min-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Main Icons */
+.icons{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;  
+}
+
+.icons a{
+    color: #2980b9;
+    font-size: 1.2em;
+    transition: all 0.3s;
+}
+
+.icons a:hover{
+    color: #000;
+}
+
+/* Cover Image */
+.img{
+    width: 60%;
+    margin: 30px auto;
+}
+
+.img img{
+    width: 300px;
+    max-width: 100%;
+    border: #2980b9 5px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.img img:hover{
+    transform: scale(1.03);
+}
+
+/* Song Title */
+.title{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.title h1{
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+}
+
+.title p{
+    font-size: 0.8em;
+}
+
+/* Time Duration */
+.time{
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* Seek Bar */
+.seek{
+    width: 80%;
+    margin: 0 auto;
+    height: 5px;
+    background: #2980b9;
+    border-radius: 50px;
+}
+
+.seek .fill{
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
+}
+
+/* Audio Buttons */
+.audio-btns{
+    background: #2980b9;
+    margin: 40px auto;
+    height: 350px;
+    width: 100%;
+    border-radius: 20%;
+    text-align: center;
+}
+
+.audio-btns a:hover{
+    color: #d1cccc;
+}
+
+/* Play */
+.play-btns{
+    padding: 45px 0 30px 0;
+}
+
+.play-btns a{
+    color: #fff;
+    margin: 0 30px;
+    font-size: 1.5rem;
+    transition: all 0.5s;
+}
+
+
+/* Repeat */
+.repeat-btns{
+    margin: 5px 0;
+}
+
+.repeat-btns a{
+    color: #fff;
+    margin: 0 40px;
+    font-size: 1.5rem;
+    transition: all 0.5s;
+}
+
+.repeat-btns button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2980b9;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+}
+
+.repeat-btns button:hover{
+    background: #979696;
+}
