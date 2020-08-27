@@ -83,7 +83,7 @@ body{
 }
 
 .img img:hover{
-    transform: scale(1.03);
+    transform: scale(0.98);
     border-color: #4d4e4e;
 }
 
