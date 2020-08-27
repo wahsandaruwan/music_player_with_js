@@ -13,7 +13,7 @@ window.onload = playSong;
 // Function to play song when window loads
 function playSong(){
     audio.src = './resources/music/' + audios[currentSong];
-    // audio.play();
+    audio.play();
 }
 
 // Function to play and pause
@@ -97,11 +97,19 @@ function prevSong(){
 // Function to volume up volup
 function volUp(){
     audio.volume += 0.25;
+    if(audio.volume >= 0.25){
+        let volumeUp = document.querySelector(".speaker-mute");
+        volumeUp.innerHTML = "<i class='fa fa-volume-up'></i>"
+    }
 }
 
 // Function to volume up volDown
 function volDown(){
     audio.volume -= 0.25;
+    if(audio.volume <= 0){
+        let volumeUp = document.querySelector(".speaker-mute");
+        volumeUp.innerHTML = "<i class='fa fa-volume-mute'></i>"
+    }
 }
 
 // Function Speaker Mute and Unmute
