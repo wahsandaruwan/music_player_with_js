@@ -14,6 +14,10 @@ window.onload = playSong;
 function playSong(){
     audio.src = './resources/music/' + audios[currentSong];
     audio.play();
+
+    // Set repeat playlist on style
+    let repeatIcon = document.querySelector(".repeat i");
+    repeatIcon.style.color = "#4d4e4e";
 }
 
 // Function to play and pause
