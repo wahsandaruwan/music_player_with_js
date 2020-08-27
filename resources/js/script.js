@@ -38,6 +38,11 @@ audio.addEventListener("timeupdate", function(){
 
     // Duration
     convertTime(Math.round(audio.currentTime));
+
+    // Playe next song after current song ends
+    if(audio.ended){
+        nextSong();
+    }
 });
 
 // Function to convert current time
@@ -61,13 +66,53 @@ function totalTime(sec){
     min = min < 10 ? "0" + min : min;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     currentTime.textContent += " - " + min + ":" + seconds
-
 }
 
 // Function to next song
 function nextSong(){
     currentSong++;
-    if(currentSong > length(audio)){
-        currentSong = 2
+    if(currentSong > audios.length-1){
+        currentSong = 0
+    }
+    playSong();
+    playBtn = document.querySelector(".play-pause");
+    playBtn.innerHTML = "<i class='fa fa-pause'></i>";
+    // Change cover image
+    document.querySelector(".img img").src = './resources/img/' + covers[currentSong];
+}
+
+// Function to previous song
+function prevSong(){
+    currentSong--;
+    if(currentSong < 0){
+        currentSong = audios.length-1;
+    }
+    playSong();
+    playBtn = document.querySelector(".play-pause");
+    playBtn.innerHTML = "<i class='fa fa-pause'></i>";
+    // Change cover image
+    document.querySelector(".img img").src = './resources/img/' + covers[currentSong];
+}
+
+// Function to volume up volup
+function volUp(){
+    audio.volume += 0.25;
+}
+
+// Function to volume up volDown
+function volDown(){
+    audio.volume -= 0.25;
+}
+
+// Function Speaker Mute and Unmute
+function speakerMute(){
+    let volumeUp = document.querySelector(".speaker-mute");
+    if(audio.volume <= 1 && audio.volume > 0){
+        audio.volume = 0;
+        volumeUp.innerHTML = "<i class='fa fa-volume-mute'></i>"
+    }
+    else{
+        audio.volume = 1;
+        volumeUp.innerHTML = "<i class='fa fa-volume-up'></i>"
     }
 }

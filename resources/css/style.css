@@ -75,6 +75,7 @@ body{
 
 .img img{
     width: 300px;
+    max-height: 30vh;
     max-width: 100%;
     border: #32c74b 5px solid;
     border-radius: 20px;
@@ -166,6 +167,10 @@ body{
     font-size: 1.5rem;
     outline: none;
     transition: all 0.5s;
+}
+
+.repeat-btns i{
+    max-width: 20px;
 }
 
 .repeat-btns button{
