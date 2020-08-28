@@ -75,7 +75,7 @@ body{
 
 .img img{
     width: 300px;
-    max-height: 30vh;
+    height: 170px;
     max-width: 100%;
     border: #32c74b 5px solid;
     border-radius: 20px;
@@ -118,6 +118,7 @@ body{
     height: 7px;
     background: #32c74b;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .seek .fill{

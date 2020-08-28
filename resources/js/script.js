@@ -1,3 +1,5 @@
+// Variables for Playe Controls
+let seek = document.querySelector(".seek");
 let fillbar = document.querySelector(".fill");
 let audios = ['bensound-acousticbreeze.mp3','bensound-actionable.mp3','bensound-allthat.mp3','bensound-betterdays.mp3','bensound-creativeminds.mp3'];
 let covers = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'];
@@ -13,13 +15,13 @@ window.onload = playSong;
 // Function to play song when window loads
 function playSong(){
     audio.src = './resources/music/' + audios[currentSong];
-    // audio.play();
+    audio.play();
 
     // Set repeat playlist on style
     let repeatIcon = document.querySelector(".repeat i");
     repeatIcon.style.color = "#4d4e4e";
 
-    // Update title 
+    // Update song title when play
     let title = document.querySelector(".title h1");
     let t = (audios[currentSong].replace(/\b\w/g, l => l.toUpperCase())).replace(".Mp3","");
     title.innerHTML = t;
@@ -40,12 +42,13 @@ function togglePlayPause(){
     }
 }
 
-// Function to dynamically fill the Seek Bar
+// Event Listeners for seek bar related behaviours
+// dynamically fill the Seek Bar
 audio.addEventListener("timeupdate", function(){
     let position = audio.currentTime / audio.duration;
     fillbar.style.width = position * 100 + "%";
 
-    // Duration
+    // Current Time
     convertTime(Math.round(audio.currentTime));
 
     // Playe next song after current song ends
@@ -53,6 +56,13 @@ audio.addEventListener("timeupdate", function(){
         nextSong();
     }
 });
+
+// Skip arround when clicking on seek bar
+seek.addEventListener("mousedown", function(event){
+    let seekBarWidth = window.getComputedStyle(seek).width;
+    let timeToSeek = event.offsetX / parseInt(seekBarWidth) * audio.duration;
+    audio.currentTime = timeToSeek;   
+},false);
 
 // Function to convert current time
 function convertTime(sec){
