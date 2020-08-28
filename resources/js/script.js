@@ -13,11 +13,16 @@ window.onload = playSong;
 // Function to play song when window loads
 function playSong(){
     audio.src = './resources/music/' + audios[currentSong];
-    audio.play();
+    // audio.play();
 
     // Set repeat playlist on style
     let repeatIcon = document.querySelector(".repeat i");
     repeatIcon.style.color = "#4d4e4e";
+
+    // Update title 
+    let title = document.querySelector(".title h1");
+    let t = (audios[currentSong].replace(/\b\w/g, l => l.toUpperCase())).replace(".Mp3","");
+    title.innerHTML = t;
 }
 
 // Function to play and pause
