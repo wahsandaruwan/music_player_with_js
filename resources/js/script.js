@@ -1,4 +1,4 @@
-// Variables for Playe Controls
+// --- Variables for Playe Controls
 var seek = document.querySelector(".seek");
 var fillbar = document.querySelector(".fill");
 var audios = ['bensound-acousticbreeze.mp3','bensound-actionable.mp3','bensound-allthat.mp3','bensound-betterdays.mp3','bensound-creativeminds.mp3'];
@@ -18,6 +18,7 @@ var currentSong = 0;
 // Play song when window loads
 window.onload = playSong;
 
+// --- For Play Song
 // Function to play song when window loads
 function playSong(){
     // Set source and play
@@ -46,6 +47,7 @@ function togglePlayPause(){
     }
 }
 
+// --- For Seek Bar and Time Duration
 // Event Listeners for seek bar related behaviours
 // dynamically fill the Seek Bar
 audio.addEventListener("timeupdate", function(){
@@ -105,6 +107,7 @@ function totalTime(sec){
     currentTime.textContent += " - " + min + ":" + seconds
 }
 
+// --- For Next and Previous Song
 // Function to next song
 function nextSong(){
     currentSong++;
@@ -131,7 +134,8 @@ function prevSong(){
     document.querySelector(".img img").src = './resources/img/' + covers[currentSong];
 }
 
-// Function to volume up volup
+// --- For Volume Control
+// Function to volume up and down
 function volUp(){
     audio.volume += 0.25;
     if(audio.volume >= 0.25){
@@ -162,6 +166,7 @@ function speakerMute(){
     }
 }
 
+// --- For Shuffle and Repeat Playlist
 // Event Listener for Shuffle
 let shuffle = document.querySelector(".shuffle");
 shuffle.addEventListener("click", function(e){
