@@ -15,4 +15,6 @@
 * Next / Previous
 * Cover Images
 
+### License : MIT
+
 #### You are welcome to upadate this source code if it contains any miss matches.
